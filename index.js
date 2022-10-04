@@ -8,6 +8,19 @@ function attack() {
     wizard.takeDamage(orc.currentDiceScore)
     orc.takeDamage(wizard.currentDiceScore)
     render()
+    if (orc.health == 0 || wizard == 0){
+        endGame()
+    }
+}
+
+function endGame() {
+    if (orc.health === 0 && wizard === 0) {
+        console.log("You killed each other! There is no victor")
+    } else if (orc.health == 0) {
+        console.log('You are victorious!')
+    } else {
+        console.log('You are dead!')
+    }
 }
 
 
